@@ -1,0 +1,57 @@
+html, body {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+
+.jumbotron {
+    background: linear-gradient(
+        rgba(0,0,0, 0.1), 
+        rgba(0,0,0, 0.5)
+    ),url('../img/kaart_uitsnede2.jpg') no-repeat;
+    background-size: cover;
+}
+
+.jumbotron {
+    border-bottom: 1px solid #EBEBEB;
+    color: white;
+}
+
+.jumbotron h1, .jumbotron h2 {
+    text-shadow: 1px 1px 3px #595959;
+}
+
+.thumbnail img {
+    max-height: 220px;
+}
+
+.overlay {
+    background: rgba(0,255,255, 0.5);
+}
+
+small {
+    color: #E6E6E6;
+}
+
+.navbar {
+    -moz-box-shadow:      0  10px 10px -10px #4D4D4D, 
+        0 -10px 10px -10px #4D4D4D;
+    -webkit-box-shadow:   0  10px 10px -10px #4D4D4D, 
+        0 -10px 10px -10px #4D4D4D;
+    box-shadow:          0  10px 10px -10px #4D4D4D, 
+        0 -10px 10px -10px #4D4D4D;
+}
+
+.nav-tabs {
+    border-bottom: 0px;
+}
+
+body {
+    padding-top: 50px; 
+    overflow-y:scroll;
+}
+
+.loading {
+    background: url("../img/ajax-loader.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}

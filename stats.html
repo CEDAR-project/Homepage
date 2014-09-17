@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CEDAR - Dutch historical census dataset</title>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/vt.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html" style="max-width: 100%;">
+                        <img class="img-responsive pull-left" src="img/cedar_150x50.png" style="margin-top: -12px;">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="data.html"><span class="glyphicon glyphicon-hdd"></span>&nbsp;Data</a></li>
+                        <li class="active"><a href="stats.html"><span class="glyphicon glyphicon-stats"></span>&nbsp;Statistics</a></li>
+                        <li><a href="info.html"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Information</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <div class="container" id="main-container">
+            <div class="page-header">
+                <h2><span class="glyphicon glyphicon-stats"></span>&nbsp;Statistics over the data integration process</h2>
+            </div>    
+            <h3>Overview</h3>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Amount of data processed</div>
+                        <div class="panel-body">
+                            <p>Global count for all the data converted from the Excel files</p>
+                        </div>
+                        <table class="table table-condensed table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Number of datasets processed</td>
+                                    <td id="nb_datasets"></td>
+                                </tr>
+                                <tr>
+                                    <td>Expected number of datasets</td>
+                                    <td id="nb_datasets_expected"></td>
+                                </tr>
+                                <tr>
+                                    <td>Total number of observations</td>
+                                    <td id="nb_observations"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <h3>Datasets per census type and year</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-condensed table-hover ">
+                        <thead>
+                            <tr>
+                                <th>Excel file</th>
+                                <th>Datasets</th>
+                                <th>Expected datasets</th>
+                                <th>Observations</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table_nbs_per_src_overview">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="collapse-group">
+                        <button type="button" class="btn btn-primary" data-toggle="collapse"
+                                data-target="#viewdetails">View breakdown per Excel file
+                            &raquo;</button>
+                        <span id="viewdetails" class="collapse">
+                            <table class="table table-condensed table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Excel file</th>
+                                        <th>Datasets</th>
+                                        <th>Expected datasets</th>
+                                        <th>Observations</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table_nbs_per_src">
+                                </tbody>
+                            </table>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Details about the observations</h3>
+            <p class="text-muted">An observation is a data point of the census
+                corresponding to a particular group of individuals. This group
+                gets assigned a number of 'dimensions' that characterise it.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Global break-down of integration output</div>
+                        <div class="panel-body">
+                            <p>Observations are ignored if they contain a
+                                total and are released otherwise. Those which are not explicitly
+                                ignored or released are left aside</p>
+                        </div>
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Released</td><td id="nb_observations_released"></td></tr>
+                                <tr><td>Ignored</td><td id="nb_observations_ignored"></td></tr>
+                                <tr><td>Left over</td><td id="nb_observations_leftover"></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Global break-down of integration output</div>
+                        <div id="observations-donut" style="height: 300px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Dimensions found</div>
+                        <div class="panel-body">
+                            <p>Number of times a value has been mapped to a particular dimension</p>
+                        </div>
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Dimension</th>
+                                    <th>Occurences</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table_nb_occurences">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Dimensions found</div>
+                        <div id="dimensions-donut" style="height: 300px;"></div>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <footer>
+                <p>&copy; Data Archiving and Networked Services (DANS) 2014</p>
+            </footer>
+        </div> <!-- /container -->
+
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.flot.min.js"></script>
+        <script type="text/javascript" src="js/jquery.flot.pie.min.js"></script>
+        <script type="text/JavaScript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/stats.js"></script>
+    </body>
+</html>

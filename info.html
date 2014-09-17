@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CEDAR - Dutch historical census dataset</title>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/vt.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html" style="max-width: 100%;">
+                        <img class="img-responsive pull-left" src="img/cedar_150x50.png" style="margin-top: -12px;">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="data.html"><span class="glyphicon glyphicon-hdd"></span>&nbsp;Data</a></li>
+                        <li><a href="stats.html"><span class="glyphicon glyphicon-stats"></span>&nbsp;Statistics</a></li>
+                        <li class="active"><a href="info.html"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Information</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="page-header">
+                <h2><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Information about the data</h2>
+            </div>
+            <h3>Data integration pipeline</h3>
+            <p class="text-justify">The following picture illustrates the data integration process. Starting from Excel files which contain the transcription of the census books we generate a set of "raw-rdf". This process requires a manual input (red arrow) which consists in annotating the cells with the type of content they contain, this is necessary to deal with the heterogeneity of the files. Once the raw rdf files are created they are integrated following a number of harmonization rules produced by historians. Eventual corrections about the content are also taken into consideration at that stage.</p>
+            <img src="img/workflow.png" alt="Data integration workflow" class="img-rounded center-block">
+            <h3>Links to external datasets</h3>
+            <ul>
+                <li>All the city and province codes are resources from <a href="http://www.gemeentegeschiedenis.nl/">http://www.gemeentegeschiedenis.nl/</a>. These resources are in turn connected to Geonames and DBpedida. It is thus possible to reach to related resources through the dimension value.</li>
+                <li>The codes for sex values come from <a href="http://purl.org/linked-data/sdmx/2009/code#">http://purl.org/linked-data/sdmx/2009/code#</a></li>
+            </ul>
+            <h3>Contact</h3>
+            More information available at <a href="http://cedar-project.nl">http://cedar-project.nl</a>
+            <hr/>
+            <footer>
+                <p>&copy; Data Archiving and Networked Services (DANS) 2014</p>
+            </footer>
+        </div> <!-- /container -->
+
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/JavaScript" src="js/bootstrap.min.js"></script>
+    </body>
+</html>

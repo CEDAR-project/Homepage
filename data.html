@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CEDAR - Dutch historical census dataset</title>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- YASQE/YASR -->
+        <link href="css/yasqe.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/yasr.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Custom overwrites -->
+        <link href="css/vt.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html" style="max-width: 100%;">
+                        <img class="img-responsive pull-left" src="img/cedar_150x50.png" style="margin-top: -12px;">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="data.html"><span class="glyphicon glyphicon-hdd"></span>&nbsp;Data</a></li>
+                        <li><a href="stats.html"><span class="glyphicon glyphicon-stats"></span>&nbsp;Statistics</a></li>
+                        <li><a href="info.html"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;Information</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="page-header">
+                <h2><span class="glyphicon glyphicon-hdd"></span>&nbsp;Data</h2>
+            </div>
+            <h3>SPARQL end point</h3>
+            <p  class="text-justify">The end point is located at <code>http://lod.cedar-project.nl/cedar/sparql</code> and can be queried using SPARQL 1.1. Use the editor below to enter you own query, the results are displayed just under it. If you don't know what to query for, click on one of these queries to load it :
+                <a onclick="javascript:loadQuery('married');">What is the evolution of the number of married women over time ?</a>,
+                <a onclick="javascript:loadQuery('datasets');">What are the source of the raw datasets ?</a>
+            </p>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="yasqe"></div>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Query results</div>
+                        <div id="yasr"></div>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <footer>
+                <p>&copy; Data Archiving and Networked Services (DANS) 2014</p>
+            </footer>
+        </div> <!-- /container -->
+
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/JavaScript" src="js/bootstrap.min.js"></script>
+        <script type="text/JavaScript" src="js/yasqe.min.js"></script>
+        <script type="text/JavaScript" src="js/yasr.min.js"></script>
+        <script type="text/JavaScript" src="js/data.js"></script>
+    </body>
+</html>
