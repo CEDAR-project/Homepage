@@ -4,11 +4,11 @@ prefix maritalstatus: <http://bit.ly/cedar-maritalstatus#>
 prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>
 
-select ?year (sum(?pop) as ?total) from <urn:graph:cedar:harmonised_data> where {
+select ?year (sum(?pop) as ?total) from <urn:graph:cedar:release> where {
   ?obs a qb:Observation.
-  ?obs cedar:maritalStatus maritalstatus:married.
+  ?obs maritalstatus:maritalStatus maritalstatus:married.
   ?obs cedar:population ?pop.
-  ?obs sdmx-dimension:sex sdmx-code:sex-F.
+  ?obs sdmx-dimension:sex sdmx-code:sex-V.
   ?slice a qb:Slice.
   ?slice qb:observation ?obs.
   ?slice sdmx-dimension:refPeriod ?year.
