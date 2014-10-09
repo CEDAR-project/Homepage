@@ -9,6 +9,7 @@ select ?year (sum(?pop) as ?total) from <urn:graph:cedar:release> where {
   ?obs maritalstatus:maritalStatus maritalstatus:married.
   ?obs cedar:population ?pop.
   ?obs sdmx-dimension:sex sdmx-code:sex-V.
+  filter not exists { ?obs cedar:ignore "1". }
   ?slice a qb:Slice.
   ?slice qb:observation ?obs.
   ?slice sdmx-dimension:refPeriod ?year.
