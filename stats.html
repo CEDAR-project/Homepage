@@ -39,53 +39,20 @@
             <div class="page-header">
                 <h2><span class="glyphicon glyphicon-stats"></span>&nbsp;Statistics over the data integration process</h2>
             </div>    
-            <h3>Overview</h3>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Amount of data processed</div>
-                        <div class="panel-body">
-                            <p>Global count for all the data converted from the Excel files</p>
-                        </div>
-                        <table class="table table-condensed table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Description</th>
-                                    <th>Count</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Number of datasets processed</td>
-                                    <td id="nb_datasets"></td>
-                                </tr>
-                                <tr>
-                                    <td>Expected number of datasets</td>
-                                    <td id="nb_datasets_expected"></td>
-                                </tr>
-                                <tr>
-                                    <td>Total number of observations</td>
-                                    <td id="nb_observations"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
             <h3>Datasets per census type and year</h3>
+            <p>This table compare the total number of sheets found in the original dataset grouped by census type and year (first column).
+            The value is to be compared with the total number of sheets that could be converted to RDF using tablink (second column).</p>
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-condensed table-hover ">
                         <thead>
                             <tr>
-                                <th>Excel file</th>
-                                <th>Datasets</th>
-                                <th>Expected datasets</th>
-                                <th>Observations</th>
+                                <th>Census type and year</th>
+                                <th>Number of expected sheets</th>
+                                <th>Number of processed sheets</th>
                             </tr>
                         </thead>
-                        <tbody id="table_nbs_per_src_overview">
+                        <tbody id="table_nb_parsed_sheets_overview">
                         </tbody>
                     </table>
                 </div>
@@ -102,77 +69,14 @@
                                 <thead>
                                     <tr>
                                         <th>Excel file</th>
-                                        <th>Datasets</th>
-                                        <th>Expected datasets</th>
-                                        <th>Observations</th>
+                                        <th>Number of expected sheets</th>
+                                        <th>Number of processed sheets</th>
                                     </tr>
                                 </thead>
-                                <tbody id="table_nbs_per_src">
+                                <tbody id="table_nb_parsed_sheets">
                                 </tbody>
                             </table>
                         </span>
-                    </div>
-                </div>
-            </div>
-
-            <h3>Details about the observations</h3>
-            <p class="text-muted">An observation is a data point of the census
-                corresponding to a particular group of individuals. This group
-                gets assigned a number of 'dimensions' that characterise it.</p>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Global break-down of integration output</div>
-                        <div class="panel-body">
-                            <p>Observations are ignored if they contain a
-                                total and are released otherwise. Those which are not explicitly
-                                ignored or released are left aside</p>
-                        </div>
-                        <table class="table table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th>Count</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Released</td><td id="nb_observations_released"></td></tr>
-                                <tr><td>Ignored</td><td id="nb_observations_ignored"></td></tr>
-                                <tr><td>Left over</td><td id="nb_observations_leftover"></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Global break-down of integration output</div>
-                        <div id="observations-donut" style="height: 300px;"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Dimensions found</div>
-                        <div class="panel-body">
-                            <p>Number of times a value has been mapped to a particular dimension</p>
-                        </div>
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Dimension</th>
-                                    <th>Occurences</th>
-                                </tr>
-                            </thead>
-                            <tbody id="table_nb_occurences">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Dimensions found</div>
-                        <div id="dimensions-donut" style="height: 300px;"></div>
                     </div>
                 </div>
             </div>
