@@ -1,0 +1,3 @@
+[submodule "Queries"]
+	path = Queries
+	url = https://github.com/CEDAR-project/Queries
