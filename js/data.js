@@ -25,7 +25,7 @@ $(document).ready(function() {
 });
 
 function loadQuery (queryname) {
-    $.ajax("https://raw.githubusercontent.com/CEDAR-project/Queries/master/" + queryname + ".rq", {
+    $.ajax("Queries/" + queryname + ".rq", {
         dataType: 'text',
         success: function (data) {
             $.yasqe.setValue(data);
