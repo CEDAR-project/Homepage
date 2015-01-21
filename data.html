@@ -58,6 +58,12 @@
 	      <li><a onclick="javascript:loadQuery('raw-data');">Get a list of raw datasets and their location</a>
 	      <li><a onclick="javascript:loadQuery('top-headers');">List of top 100 most occurring header in all the raw dataset</a>
 	    </ul>
+	    <p class="text-justify">Error-detecting queries:</p>
+	    <ul>
+	      <li><a onclick="javascript:loadQuery('double_occupation_position');">Observations with more than one occupation position</a>
+	      <li><a onclick="javascript:loadQuery('negative_population');">Observations with negative population counts</a>
+	      <li><a onclick="javascript:loadQuery('non-integer-population');">Observations with non-integer population counts</a>
+	    </ul>
             <div class="row">
                 <div class="col-md-12">
                     <div id="yasqe"></div>
