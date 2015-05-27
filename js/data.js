@@ -4,7 +4,7 @@
 $(document).ready(function() {
     $.yasqe = YASQE($('#yasqe')[0], {
         sparql: {
-            endpoint: 'http://lod.cedar-project.nl/cedar/sparql',
+            endpoint: 'http://lod.cedar-project.nl/cedar-mini/sparql',
             showQueryButton: true
         }
     });
