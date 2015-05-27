@@ -45,21 +45,34 @@
             <div class="page-header">
                 <h2><span class="glyphicon glyphicon-hdd"></span>&nbsp;Data</h2>
             </div>
-            <h3>SPARQL end point</h3>
-            <p  class="text-justify">The end point is located at <code>http://lod.cedar-project.nl/cedar-mini/sparql</code> and can be queried using SPARQL 1.1. Use the editor below to enter you own query, the results are displayed just under it. If you don't know what to query for, try one of these sample queries:</p>
+            <h3>SPARQL endpoint</h3>
+            <p  class="text-justify">The end point is located at <code>http://lod.cedar-project.nl/cedar-mini/sparql</code> and can be queried using SPARQL 1.1. Use the editor below to enter you own query, the results are displayed just under it. If you don't know what to query for, try one of these sample queries by clicking on it. Default query values can be customized (for example, other valid reference periods are 1859, 1869, 1879, 1889, 1899, 1909 and 1920).</p>
+	    <ul>
+              <li><a onclick="javascript:loadQuery('observation');">Observation describing inhabited houses of Zuid-Scharwoude (North Holland) in 1899</a>
+              <li><a onclick="javascript:loadQuery('occupied-houses');">Occupied houses per municipality, 1879</a>
+              <li><a onclick="javascript:loadQuery('occupied-ships');">Occupied living ships per municipality, 1879</a>
+              <li><a onclick="javascript:loadQuery('juridisch-aanwezig-m');">Legally registered and present male inhabitants per municipality, 1879</a>
+              <li><a onclick="javascript:loadQuery('juridisch-aanwezig-f');">Legally registered and present female inhabitants per municipality, 1879</a>
+              <li><a onclick="javascript:loadQuery('under-construction');">Houses under construction per municipality, 1879</a>
+              <li><a onclick="javascript:loadQuery('empty-houses');">Empty houses per municipality, 1879</a>
+              <li><a onclick="javascript:loadQuery('ships-absent');">Temporarily present inhabitants in ships per municipality, 1899</a>
+              <li><a onclick="javascript:loadQuery('temp-present-males');">Number of temporarily present males per municipality, from 1869 until 1920</a>
+              <li><a onclick="javascript:loadQuery('temp-present-females');">Number of temporarily present females per municipality, from 1869 until 1920</a>
+              <li><a onclick="javascript:loadQuery('temp-absent-males');">Temporarily absent males per municipality, 1879</a>
+              <li><a onclick="javascript:loadQuery('temp-absent-females');">Temporarily absent females per municipality, 1879</a>
+              <li><a onclick="javascript:loadQuery('wagons');">Temporarily present inhabitants in wagons per municipality, 1899</a>
+              <li><a onclick="javascript:loadQuery('house-types');">Number of houses according to their type per municipality, from 1859 until 1920</a>
+	    </ul>
+	    <p class="text-justify">Technical queries:</p>
 	    <ul>
 	      <li><a onclick="javascript:loadQuery('count');">Count the number of triples per graph</a>
               <li><a onclick="javascript:loadQuery('datasets');">Source of the raw datasets</a>
 	      <li><a onclick="javascript:loadQuery('find_column_headers');">Find column headers according to their label</a>
 	      <li><a onclick="javascript:loadQuery('get-dimensions');">Get a list of the dimensions used by the harmonized dataset</a>
 	      <li><a onclick="javascript:loadQuery('get-headers');">Get a list of the headers used by the harmonized dataset</a>
-              <li><a onclick="javascript:loadQuery('married');">Evolution of the number of married women over the years</a>
 	      <li><a onclick="javascript:loadQuery('parsed_sheets');">Get the number of sheets parsed as raw-data</a>
 	      <li><a onclick="javascript:loadQuery('raw-data');">Get a list of raw datasets and their location</a>
 	      <li><a onclick="javascript:loadQuery('top-headers');">List of top 100 most occurring header in all the raw dataset</a>
-	      <li><a onclick="javascript:loadQuery('shoemakers-province');">Number of shoemakers for each censsus year for each province grouped by age</a>
-	      <li><a onclick="javascript:loadQuery('2-72-houses');">House count of type 2-72 over the years</a>
-	      <li><a onclick="javascript:loadQuery('2-72-houses-obs');">Observations of the house 2-72 by years count</a>
 	    </ul>
 	    <p class="text-justify">Mini-project queries:</p>
 	    <ul>
@@ -76,6 +89,13 @@
 	      <li><a onclick="javascript:loadQuery('double_occupation_position');">Observations with more than one occupation position</a>
 	      <li><a onclick="javascript:loadQuery('negative_population');">Observations with negative population counts</a>
 	      <li><a onclick="javascript:loadQuery('non-integer_population');">Observations with non-integer population counts</a>
+	    </ul>
+	    <p class="text-justify">Other queries:</p>
+	    <ul>
+              <li><a onclick="javascript:loadQuery('married');">Evolution of the number of married women over the years</a>
+	      <li><a onclick="javascript:loadQuery('shoemakers-province');">Number of shoemakers for each censsus year for each province grouped by age</a>
+	      <li><a onclick="javascript:loadQuery('2-72-houses');">House count of type 2-72 over the years</a>
+	      <li><a onclick="javascript:loadQuery('2-72-houses-obs');">Observations of the house 2-72 by years count</a>
 	    </ul>
             <div class="row">
                 <div class="col-md-12">
