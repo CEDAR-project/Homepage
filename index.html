@@ -47,7 +47,8 @@
     <div class="row">
     <div class="col-md-4">
         <h2><span class="glyphicon glyphicon-hdd"></span>&nbsp;Data</h2>
-        <p class="text-justify">The dataset consists of about 2000 "raw" data cubes 1 "harmonized" data cube. All the data is accessible via a SPARQL end point and some APIs.</p>
+        <p class="text-justify">The dataset consists of about 2000
+        "raw" data cubes integrated into 1 "harmonized" data cube. All the data is accessible via a SPARQL endpoint.</p>
         <p><a class="btn btn-primary pull-right" href="data.html" role="button">Take a look &raquo;</a></p>
     </div>
     <div class="col-md-4">
@@ -62,30 +63,6 @@
     </div>
     </div>
     <div class="row" style="margin-top:50px">
-      <h2>Dataset Integration Workflow</h2>
-      <p>This is the entry point to the integrated version of the Dutch historical censuses (1795-1971) in RDF. The source data is availalbe at <a href="http://www.volkstellingen.nl/" target="_blank">volkstellingen.nl</a>, as a collection of disparate Excel files that are very difficult to query in a systematic way. We usually refer to such collection as a <i>messy spreadsheet collection</i> (MSC). To integrate this MSC on the Web, we use the <a href="https://github.com/CEDAR-project/Integrator" target="_blank">Integrator</a>, a framework for integrating any kind of MSC using Web technology. To produce an integrated version of this MSC in RDF, we run the Integrator with <a href="https://github.com/CEDAR-project/Integrator/blob/master/config.ini" target="_blank">this configuration</a>. The result is served through <a href="http://lod.cedar-project.nl/cedar-mini/sparql" target="_blank">this SPARQL endpoint</a> and <a href="data.html" target="_blank">this YASGUI instance</a> with examples (use the named graphs &lt;urn:graph:cedar:raw-data&gt;, &lt;urn:graph:cedar:rules&gt; and &lt;urn:graph:cedar:release&gt;).</p>
-      <a class="btn btn-primary pull-right" href="info.html" role="button">Learn more &raquo;</a>
-      <h3>Data Location Definitions</h3>
-      <p>Data in this MSC is arbitrary located in several places of the spreadsheet layout. To precisely define where data observations and dimensions are located, we <b>mark up with styles</b> the source data. A sample of this markup can be found <a href="https://github.com/CEDAR-project/DataDump/tree/mini-project-vt/source-data" target="_blank">here</a>.</p>
-      <h3>Conciliation Rules</h3>
-      <p>Dimensions in this MSC are implicitly defined. In order to make them explicit, we generate a set of <b>context-aware conciliation mappings</b> that can be easily written by domain experts. Example mapping files on several dimensions can be found <a href="https://github.com/CEDAR-project/DataDump/tree/mini-project-vt/mapping" target="_blank">here</a>. A master <a href="https://github.com/CEDAR-project/DataDump/blob/mini-project-vt/mapping/metadata.txt" target="_blank">metadata file</a> is used as an index to all defined mapping files.</p>
-      <h3>Measurement Transformations</h3>
-      <p>Data in this MSC needs to be transforomed in order to be fully integrated. To this end, we extend SPARQL into SPARQLSS (SPARQL Speaks Statistics), <b>a Web friendly way of transforming Web data</b> without quiting the Web ecosystem. An example implementation that imputes missing values for this MSC can be found <a href="https://github.com/albertmeronyo/stardog-r" target="">here</a>.</p>
-      <h3>Error Detection</h3>
-      <p>To <b>detect data errors and inconsistencies</b> after the execution of previous stages, we use <a href="http://www.linkededitrules.org/" target="_blank">Linked Edit Rules</a> (LER). LER allow us to encode domain constraints that the data cubes with which the data cubes must be compliant. First, we generate <a href="https://raw.githubusercontent.com/albertmeronyo/linked-edit-rules/master/data/cedar-rules.ttl" target="_blank">this set of LER</a> using domain expert knowledge. The results of checking these LER against the data, containing 44,207 observations that do not meet these LER, are available <a href="http://lod.cedar-project.nl/linked-edit-rules/eval.html#census-dataset" target="_blank">here</a>.</p>
-
-      <h2>Additional Resources</h2>
-      <p>The following list contains links to additional resources contributed by various users:</p>
-
-      <ul>
-	<li><a href="https://github.com/Data2Semantics/TabLinker" target="_blank">TabLinker</a> is aconversion tool from spreadsheets with eccentric layouts to RDF Data Cube, currently used by different users in various use cases. Its core is included in the <a href="https://github.com/CEDAR-project/Integrator" target="_blank">Integrator</a>'s source code.
-	<li>This <a href="https://hackpad.com/CEDAR-2014-hackathon-4aFdpD1kvpg" target="_blank">hackpad</a> contains links and results of various applications built on top of the integrated census dataset, developed during a hackathon.
-	<li>The celebration of <a href="https://videbo.wordpress.com/2014/06/17/vu-e-history-datathon-links-up-multiple-datasets/" target="_blank">this linkathon</a> resulted in the creation of many links from and to the census integrated dataset.
-	<li>The <a href="http://nlgis.nl/" target="_blank">NLGIS project</a> currently uses the integrated census dataset SPARQL endpoint to feed their historical maps.
-	<li>Researchers have integrated R scripting, <a href="http://leafletjs.com/" target="_blank">javascript</a> and historical map shapes to generate <a href="http://lod.cedar-project.nl/maps/" target="_blank">time-aware maps</a> across Dutch social history.
-      </ul>
-
-    </div>
 
     <hr/>
         <footer>
