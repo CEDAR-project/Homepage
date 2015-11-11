@@ -47,8 +47,14 @@
             </div>
             <h3>SPARQL endpoint</h3>
             <p  class="text-justify">The end point is located at <code>http://lod.cedar-project.nl/cedar-mini/sparql</code> and can be queried using SPARQL 1.1. Use the editor below to enter you own query, the results are displayed just under it. If you don't know what to query for, try one of these sample queries by clicking on it. Default query values can be customized (for example, other valid reference periods are 1859, 1869, 1879, 1889, 1899, 1909 and 1920).</p>
+	    <p  class="text-justify">The three named graphs <code>&lt;urn:graph:cedar:raw-data&gt;</code>, <code>&lt;urn:graph:cedar:rules&gt;</code> and 
+<code>&lt;urn:graph:cedar:release&gt;</code> contain a full conversion of the 2,288 census tables of the dataset. This collection is harmonized with a set of generic 
+mapping rules, enabling the dataset to be queried under the RDF Data Cube schema. This collection is available at its own SPARQL endpoint at <code>http://lod.cedar-project.nl/cedar/sparql</code>. Additionally, we release a highly curated subset of this collection, called <code>cedar-mini</code> and contained in the named graphs <code>&lt;urn:graph:cedar-mini:raw-data&gt;</code>, <code>&lt;urn:graph:cedar-mini:rules&gt;</code> and
+<code>&lt;urn:graph:cedar-mini:release&gt;</code>. This subset is a high-quality curated harmonized version of the 59 most consulted and relevant tables of the
+collection. The <code>cedar-mini</code> subset is available at its own SPARQL endpoint at <code>http://lod.cedar-project.nl/cedar-mini/sparql</code>.
+	    <p class="text-justify">General queries (over <code>/cedar-mini/sparql</code>):</p>
 	    <ul>
-              <li><a onclick="javascript:loadQuery('observation');">Observation describing inhabited houses of Zuid-Scharwoude (North Holland) in 1899</a>
+              <li><a onclick="javascript:loadQuery('observation');">Observation describing other inhabited houses in district A of the urban area of Zuid-Scharwoude (North Holland) in 1889</a>
               <li><a onclick="javascript:loadQuery('occupied-houses');">Occupied houses per municipality, 1879</a>
               <li><a onclick="javascript:loadQuery('occupied-ships');">Occupied living ships per municipality, 1879</a>
               <li><a onclick="javascript:loadQuery('juridisch-aanwezig-m');">Legally registered and present male inhabitants per municipality, 1879</a>
@@ -63,7 +69,7 @@
               <li><a onclick="javascript:loadQuery('wagons');">Temporarily present inhabitants in wagons per municipality, 1899</a>
               <li><a onclick="javascript:loadQuery('house-types');">Number of houses according to their type per municipality, from 1859 until 1920</a>
 	    </ul>
-	    <p class="text-justify">Technical queries:</p>
+	    <p class="text-justify">Technical queries (over <code>/cedar-mini/sparql</code>):</p>
 	    <ul>
 	      <li><a onclick="javascript:loadQuery('count');">Count the number of triples per graph</a>
               <li><a onclick="javascript:loadQuery('datasets');">Source of the raw datasets</a>
@@ -74,7 +80,7 @@
 	      <li><a onclick="javascript:loadQuery('raw-data');">Get a list of raw datasets and their location</a>
 	      <li><a onclick="javascript:loadQuery('top-headers');">List of top 100 most occurring header in all the raw dataset</a>
 	    </ul>
-	    <p class="text-justify">Mini-project queries:</p>
+	    <p class="text-justify">Mini-project queries (over <code>/cedar-mini/sparql</code>):</p>
 	    <ul>
 	      <li><a onclick="javascript:loadQuery('original-parent-headers');">Reconstructing hierarchical headers (max depth 3)</a>
 	      <li><a onclick="javascript:loadQuery('original-parent-headers-4');">Reconstructing hierarchical headers (max depth 4)</a>
@@ -84,13 +90,13 @@
 	      <li><a onclick="javascript:loadQuery('cross-year-totals');">Totals per municipality in several years, ordered by municipality</a>
 	      <li><a onclick="javascript:loadQuery('check_non-annotated-cells');">Headers which still have no standardization mapping rule</a>
 	    </ul>
-	    <p class="text-justify">Error-detecting queries:</p>
+	    <p class="text-justify">Error-detecting queries (over <code>/cedar/sparql</code>):</p>
 	    <ul>
 	      <li><a onclick="javascript:loadQuery('double_occupation_position');">Observations with more than one occupation position</a>
 	      <li><a onclick="javascript:loadQuery('negative_population');">Observations with negative population counts</a>
 	      <li><a onclick="javascript:loadQuery('non-integer_population');">Observations with non-integer population counts</a>
 	    </ul>
-	    <p class="text-justify">Other queries:</p>
+	    <p class="text-justify">Other queries (over <code>/cedar/sparql</code>):</p>
 	    <ul>
               <li><a onclick="javascript:loadQuery('married');">Evolution of the number of married women over the years</a>
 	      <li><a onclick="javascript:loadQuery('shoemakers-province');">Number of shoemakers for each censsus year for each province grouped by age</a>
